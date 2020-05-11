@@ -1,0 +1,20 @@
+// We can solve this in O(n) time using the "Sliding Window" approach to the problem solving.
+
+// The Sliding Window will represent the current substring of non repeating characters we are on.
+
+// We will NOT be working with Sliding Window of Fixed Size, the window will grow or shrink in size as we iterate thru string.
+
+// Current index and value in for loop will ALWAYS BE END of the sliding window.  As end of window increases, we conditionally increase start of window.
+
+// Pseudocode
+// Create an empty hashMap (key/val -> character/index)
+// Create start and max variable, set both with initial values of zero
+
+// Loop thru Input string
+  // If current Character in HashMap & has index >= start
+    // Set start to index for character found in Hashmap + 1
+  // Set key/value pair on Hashmap to be current Character/current Index
+  // If length of current window is greater than max
+    // Set max to lenght of current window
+
+// Return max
