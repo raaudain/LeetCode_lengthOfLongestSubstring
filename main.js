@@ -18,3 +18,29 @@
     // Set max to lenght of current window
 
 // Return max
+
+function lengthOfLongestSubstring(s){
+  let windowCharsMap = {};
+  let windowStart = 0;
+  let maxLength = 0;
+
+  for(let i = 0; i < s.length; i++){
+    const endChar = s[i];
+    //console.log(endChar)
+    if(windowCharsMap[endChar] >= windowStart){
+      windowStart + windowCharsMap[endChar] + 1;
+      //console.log(windowCharsMap)
+    }
+
+    // Adds value to key
+    windowCharsMap[endChar] = i;
+    maxLength = Math.max(maxLength, i - windowStart + 1);
+  }
+
+  return maxLength;
+}
+
+
+s = ["a","b","c","a","b","c","a","b","c"]
+
+lengthOfLongestSubstring(s)
