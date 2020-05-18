@@ -36,6 +36,7 @@ function lengthOfLongestSubstring(s){
     windowCharsMap[endChar] = i;
     maxLength = Math.max(maxLength, i - windowStart + 1);
   }
+  
 
   // Solution #1.2
   let windowCharsMap = {};
