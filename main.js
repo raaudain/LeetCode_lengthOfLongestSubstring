@@ -20,27 +20,51 @@
 // Return max
 
 function lengthOfLongestSubstring(s){
-  let windowCharsMap = {};
-  let windowStart = 0;
-  let maxLength = 0;
+  // Soluton #1
+  // let windowCharsMap = {};
+  // let windowStart = 0;
+  // let maxLength = 0;
 
-  for(let i = 0; i < s.length; i++){
-    const endChar = s[i];
-    //console.log(endChar)
-    if(windowCharsMap[endChar] >= windowStart){
-      windowStart + windowCharsMap[endChar] + 1;
-      //console.log(windowCharsMap)
-    }
+  // for(let i = 0; i < s.length; i++){
+  //   const endChar = s[i];
+  //   //console.log(endChar)
+  //   if(windowCharsMap[endChar] >= windowStart){
+  //     windowStart = windowCharsMap[endChar] + 1;
+  //     //console.log(windowCharsMap)
+  //   }
 
-    // Adds value to key
-    windowCharsMap[endChar] = i;
-    maxLength = Math.max(maxLength, i - windowStart + 1);
-  }
+  //   // Adds value to key
+  //   windowCharsMap[endChar] = i;
+  //   maxLength = Math.max(maxLength, i - windowStart + 1);
+  // }
+
+  // // Solution #1.2
+  // let windowCharsMap = {};
+  // let index = 0;  // index
+  // let maxLength = 0;
+
+  // for (let char in s){
+  //   const currentChar = s[char];
+    
+  //   // Checks if current character is in windowCharsMap
+  //   if (windowCharsMap[currentChar] >= index){
+  //     // If character is in windowCharsMap
+  //     index = windowCharsMap[currentChar] + 1;
+  //   }
+    
+  //   windowCharsMap[currentChar] = char;
+  //   maxLength = Math.max(maxLength, char - index + 1);
+  //   console.log(maxLength, char, index)
+  //   console.log(maxLength);
+  // }
+
+  
 
   return maxLength;
 }
 
 
-s = ["a","b","c","a","b","c","a","b","c"]
+// s = ["a","b","c","a","b","c","a","b","c"];
+s = ["b", "b", "b", "b", "b"];
 
 lengthOfLongestSubstring(s)
